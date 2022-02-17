@@ -1,0 +1,23 @@
+{% extends 'urlapp/base.html' %}
+
+{% block title %}Добавить URL{% endblock %}
+
+{% block content %}
+
+    <div class="d-grid gap-2 col-3 mx-auto">
+        <h1 class="mx-auto">Добавить URL</h1>
+
+        <form action="" method="post" class="mx-auto">
+            {% csrf_token %}
+            <input class="form-control" placeholder="Название сайта" type="text" name="title"><br>
+            <input class="form-control" placeholder="Введите URL" type="text" name="full_url"><br>
+            <button type="submit" class="btn btn-dark">Добавить</button>
+            <p>
+                {{ full_url }}
+            </p>
+            <p>
+                {{ short_url }}
+            </p>
+        </form>
+    </div>
+{% endblock %}

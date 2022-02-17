@@ -1,0 +1,15 @@
+{% extends 'urlapp/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+
+{% block content %}
+<div class="d-grid gap-2 col-3 mx-auto">
+    <h1 class="mx-auto">Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-dark">Логин</button>
+    </form>
+</div>
+{% endblock %}

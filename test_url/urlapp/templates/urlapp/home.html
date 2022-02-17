@@ -1,0 +1,17 @@
+{% extends 'urlapp/base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+
+{% block content %}
+<div class="d-grid gap-2 col-6 mx-auto">
+    <h1 class="mx-auto">Главная страница</h1>
+    {% for i in form %}
+        <hr>
+        <h4>{{ i.title }}</h4>
+        <a href="{{ i.get_absolute_url }}">{{ i.short_url }}</a>
+        <p>{{ i.pub_data }}</p>
+        <p>{{ i.views }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
